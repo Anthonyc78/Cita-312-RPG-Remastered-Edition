@@ -25,7 +25,7 @@ namespace RPG.Combat
             // move only if a target is NOT within range
            if (!GetIsInRange())
             {
-                GetComponent<Mover>().MoveTo(target.transform.position);
+                GetComponent<Mover>().MoveTo(target.transform.position, 1f);
             }
             else // in range, attack!
             {
