@@ -53,6 +53,8 @@ namespace RPG.SceneManagement
             Portal otherPortal = GetOtherPortal(); // update the player
             UpdatePlayer(otherPortal);
 
+            wrapper.Save(); // save the current level after you load in so when you restart the game you are right where you left off
+
             yield return new WaitForSeconds(fadeWaitTime); // wait for a series of frames for the camera to stablelize
             yield return fader.FadeIn(fadeInTime); // fade in over a series of frames
 
