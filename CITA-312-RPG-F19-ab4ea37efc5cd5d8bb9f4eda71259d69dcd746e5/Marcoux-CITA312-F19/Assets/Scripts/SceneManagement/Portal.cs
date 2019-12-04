@@ -17,6 +17,9 @@ namespace RPG.SceneManagement
         [SerializeField] int sceneToLoad = -1;
         [SerializeField] Transform spawnPoint;
         [SerializeField] DestinationIdentifier destination;
+        [SerializeField] float fadeOutTime = 0.5f; // how long the fade is in frames
+        [SerializeField] float fadeInTime = 1.5f; // how long the fade is in frames
+        [SerializeField] float fadeWaitTime = 0.5f; // how long the wait is in frames
 
         private void OnTriggerEnter(Collider other)
         {
@@ -35,10 +38,17 @@ namespace RPG.SceneManagement
             }
 
             DontDestroyOnLoad(gameObject);
-            yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
-            Portal otherPortal = GetOtherPortal();
+            Fader fader = FindObjectOfType<Fader>();
+
+            yield return fader.FadeOut(fadeOutTime); // fade out over a series of frames
+            yield return SceneManager.LoadSceneAsync(sceneToLoad); // load over a series of frames
+
+            Portal otherPortal = GetOtherPortal(); // update the player
             UpdatePlayer(otherPortal);
+
+            yield return new WaitForSeconds(fadeWaitTime); // wait for a series of frames
+            yield return fader.FadeIn(fadeInTime); // fade in over a series of frames
 
             Destroy(gameObject);
         }
