@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &3861800127339941162
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512379436861404515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.43654785
+  m_Height: 2.014767
+  m_Direction: 1
+  m_Center: {x: 0.008276368, y: 0.91089374, z: 0.0035644532}
 --- !u!114 &8974325248482543526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +112,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394697505, guid: bce425f81850c074580fd28d65c80a6f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bce425f81850c074580fd28d65c80a6f, type: 3}
