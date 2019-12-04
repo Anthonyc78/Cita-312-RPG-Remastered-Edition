@@ -26,6 +26,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1940f2d5d6294469e2b823c00e5f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1167158648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4512379436861404519}
+    m_Modifications:
+    - target: {fileID: 181534, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_Sword_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 489998, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -408.405
+      objectReference: {fileID: 0}
+    - target: {fileID: 489998, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
 --- !u!1001 &2398138308020992510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36,7 +57,7 @@ PrefabInstance:
     - target: {fileID: 2294820565707279517, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279517, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
@@ -46,32 +67,32 @@ PrefabInstance:
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 444.93335
+      value: 873.68
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.3041263
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -388.5866
+      value: -382.81
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279513, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
@@ -120,14 +141,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879546518836367913, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
+      propertyPath: weaponRange
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879546518836367913, guid: bce425f81850c074580fd28d65c80a6f,
+        type: 3}
       propertyPath: weaponDamage
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6879546518836367913, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
-      propertyPath: weaponRange
-      value: 2.5
-      objectReference: {fileID: 0}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 5322957665866423154, guid: 6df2a7ed145afa842a4d3ceff71d86d5,
+        type: 3}
+    - target: {fileID: 6879546518836367913, guid: bce425f81850c074580fd28d65c80a6f,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 6636256065766447880}
     - target: {fileID: 1394697505, guid: bce425f81850c074580fd28d65c80a6f, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -212,3 +244,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &6636256065766447880 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 6636256065766566918}
+  m_PrefabAsset: {fileID: 0}
