@@ -32,8 +32,8 @@ namespace RPG.SceneManagement
         private IEnumerator Transition()
         {
             if (sceneToLoad < 0)
-            { //if the portal doesnt have a scene assigned to it this message pops up
-                Debug.LogError("Scene to load not set.");
+            {
+                Debug.LogError("Scene to load not set."); // if the portal doesnt have a scene assigned to it this message pops up
                 yield break;
             }
 
@@ -42,12 +42,18 @@ namespace RPG.SceneManagement
             Fader fader = FindObjectOfType<Fader>();
 
             yield return fader.FadeOut(fadeOutTime); // fade out over a series of frames
+
+            SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
+            wrapper.Save(); // save current level
+
             yield return SceneManager.LoadSceneAsync(sceneToLoad); // load over a series of frames
+
+            wrapper.Load(); // load current level
 
             Portal otherPortal = GetOtherPortal(); // update the player
             UpdatePlayer(otherPortal);
 
-            yield return new WaitForSeconds(fadeWaitTime); // wait for a series of frames
+            yield return new WaitForSeconds(fadeWaitTime); // wait for a series of frames for the camera to stablelize
             yield return fader.FadeIn(fadeInTime); // fade in over a series of frames
 
             Destroy(gameObject);
@@ -57,8 +63,7 @@ namespace RPG.SceneManagement
         {
             GameObject player = GameObject.FindWithTag("Player");
             player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
-            player.transform.rotation = otherPortal.spawnPoint.rotation; 
-            // used to find the location of the player and sets their spawn point coming through a portal
+            player.transform.rotation = otherPortal.spawnPoint.rotation; // used to find the location of the player and sets their spawn point coming through a portal
         }
 
         private Portal GetOtherPortal()
