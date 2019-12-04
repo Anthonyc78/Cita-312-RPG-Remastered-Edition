@@ -9,7 +9,7 @@ namespace RPG.SceneManagement
     public class SavingWrapper : MonoBehaviour
     {
         const string defaultSaveFile = "save";
-        [SerializeField] float fadeInTime = 0.4f;
+        [SerializeField] float fadeInTime = 1.2f;
 
         IEnumerator Start()
         {
