@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorOverride: {fileID: 0}
   equippedPrefab: {fileID: 0}
-  weaponDamage: 25
+  weaponDamage: 10
   weaponRange: 2
