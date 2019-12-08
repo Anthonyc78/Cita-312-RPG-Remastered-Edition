@@ -26,27 +26,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1940f2d5d6294469e2b823c00e5f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1167158648
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4512379436861404519}
-    m_Modifications:
-    - target: {fileID: 181534, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
-      propertyPath: m_Name
-      value: SM_Wep_Sword_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 489998, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -408.405
-      objectReference: {fileID: 0}
-    - target: {fileID: 489998, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13af847dfa6dbe844ba4b7c902f98f67, type: 3}
 --- !u!1001 &2398138308020992510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 2294820565707279517, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2294820565707279517, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
@@ -160,6 +139,12 @@ PrefabInstance:
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 6636256065766447880}
+    - target: {fileID: 6879546518836367913, guid: bce425f81850c074580fd28d65c80a6f,
+        type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: c9f6f086d00b0274cbe9436a0523b526,
+        type: 2}
     - target: {fileID: 1394697505, guid: bce425f81850c074580fd28d65c80a6f, type: 3}
       propertyPath: m_Enabled
       value: 0
