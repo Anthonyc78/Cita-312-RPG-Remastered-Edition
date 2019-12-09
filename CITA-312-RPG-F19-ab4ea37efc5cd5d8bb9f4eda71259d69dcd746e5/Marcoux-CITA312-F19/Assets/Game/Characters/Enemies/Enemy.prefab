@@ -184,6 +184,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5819504394338736061, guid: bce425f81850c074580fd28d65c80a6f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569738360182341178, guid: bce425f81850c074580fd28d65c80a6f,
+        type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5569738360182341178, guid: bce425f81850c074580fd28d65c80a6f,
         type: 3}
       propertyPath: healthPoints
