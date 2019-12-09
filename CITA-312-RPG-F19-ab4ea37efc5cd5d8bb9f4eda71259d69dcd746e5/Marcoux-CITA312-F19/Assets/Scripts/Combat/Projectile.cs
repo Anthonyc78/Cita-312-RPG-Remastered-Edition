@@ -1,5 +1,6 @@
 ﻿using RPG.Resources;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -11,6 +12,7 @@ namespace RPG.Combat
         [SerializeField] float maxLifeTime = 10; // max time a projectile can be on screen
         [SerializeField] GameObject[] destroyOnHit = null; // used to differentiate between game objects that we want to destroy on immediate impact
         [SerializeField] float lifeAfterImpact = 2; // the amount of time after impact before we destroy a specific object
+        [SerializeField] UnityEvent onHit; // creates a unity event on Hit()
 
         Health target = null; // used the health to identify the target
         float damage = 0; // setting the damage of the weapon
@@ -55,6 +57,8 @@ namespace RPG.Combat
             target.TakeDamage(damage); // applies damage to target
 
             speed = 0; // sets the speed of the project to 0 after impact
+
+            onHit.Invoke();
 
             if (hitEffect != null)
             {

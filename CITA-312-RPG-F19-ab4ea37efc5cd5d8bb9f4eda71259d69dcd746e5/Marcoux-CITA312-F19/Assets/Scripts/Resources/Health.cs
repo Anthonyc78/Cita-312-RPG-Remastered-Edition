@@ -4,12 +4,15 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
+using UnityEngine.Events;
 
 namespace RPG.Resources
 {
     public class Health : MonoBehaviour, ISaveable
     {
-       [SerializeField] float healthPoints = 100f; // creates the max health
+        [SerializeField] float healthPoints = 100f; // creates the max health
+        [SerializeField] UnityEvent takeDamage; // creates a unity event that I can add audio to
+        [SerializeField] UnityEvent onDie; // creates a unity event
 
         bool isDead = false;
 
@@ -26,9 +29,15 @@ namespace RPG.Resources
         public void TakeDamage(float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
+
             if (healthPoints == 0)
             {
+                onDie.Invoke(); // play the unity event
                 Die(); // if the health is at 0 then it is dead
+            }
+            else
+            {
+                takeDamage.Invoke(); // play the unity event
             }
         }
 
