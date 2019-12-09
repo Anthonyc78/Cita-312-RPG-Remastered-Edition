@@ -10,10 +10,10 @@ namespace RPG.Combat
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player") // if a game object with the tag "Player" collides with the pickup 
             {
-                other.GetComponent<Fighter>().EquipWeapon(weapon);
-                Destroy(gameObject);
+                other.GetComponent<Fighter>().EquipWeapon(weapon); // than equip the weapon
+                Destroy(gameObject); // destroy the pickup object
             }
         }
     }

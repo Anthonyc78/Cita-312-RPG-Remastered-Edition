@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2302457091093092515, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
       propertyPath: m_Name
-      value: Generic Impact Variant
+      value: Blood Impact Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2302457091092795123, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
@@ -85,17 +85,17 @@ PrefabInstance:
     - target: {fileID: 2302457091073469191, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2302457091073469191, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2302457091073469191, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2302457091073469191, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
@@ -140,7 +140,12 @@ PrefabInstance:
     - target: {fileID: 2302457091073469191, guid: 69d1b1037536b504884c93bb73d662db,
         type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 3
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302457091073469191, guid: 69d1b1037536b504884c93bb73d662db,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69d1b1037536b504884c93bb73d662db, type: 3}

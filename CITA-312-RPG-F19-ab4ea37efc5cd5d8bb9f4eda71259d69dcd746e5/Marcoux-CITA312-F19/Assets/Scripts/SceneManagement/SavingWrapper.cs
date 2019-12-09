@@ -8,27 +8,27 @@ namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
-        const string defaultSaveFile = "save";
-        [SerializeField] float fadeInTime = 1.2f;
+        const string defaultSaveFile = "save"; // sets the default save file
+        [SerializeField] float fadeInTime = 1.2f; // fade in time
 
         IEnumerator Start()
         {
-            Fader fader = FindObjectOfType<Fader>();
-            fader.FadeOutImmediate();
-            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
-            yield return fader.FadeIn(fadeInTime);
+            Fader fader = FindObjectOfType<Fader>(); // sets the fader
+            fader.FadeOutImmediate(); // fade out
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile); // loads the last save
+            yield return fader.FadeIn(fadeInTime); // fade in
         }
 
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
-                Load();
+                Load(); // loads the game when 'l' is pressed
             }
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-                Save();
+                Save(); // saves the game when 's' is pressed
             }
         }
 
