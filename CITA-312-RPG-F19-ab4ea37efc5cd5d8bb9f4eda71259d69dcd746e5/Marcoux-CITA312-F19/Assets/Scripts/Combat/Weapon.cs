@@ -26,9 +26,14 @@ namespace RPG.Combat
                 weapon.name = weaponName; // give the weapon a name
             }
 
+            var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
             if (animatorOverride != null) // check if there is a animator over ride controller selected
             {
                 animator.runtimeAnimatorController = animatorOverride; // if there is use it
+            }
+            else if (overrideController != null)
+            {
+                    animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
         }
 
