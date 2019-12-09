@@ -2,16 +2,16 @@
 using RPG.Movement;
 using RPG.Core;
 using System;
+using RPG.Saving;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAttacks = 1f; // amount of time between attacks
         [SerializeField] Transform rightHandTransform = null; // position of the right hand
         [SerializeField] Transform leftHandTransform = null; // position of the left hand
         [SerializeField] Weapon defaultWeapon = null; // sets the default weapon that a player or enemy has
-        [SerializeField] string defaultWeaponName = "Unarmed"; // sets the default weapon name to 'Unarmed'
 
         Health target; // sets the target with the health script
         float timeSinceLastAttack = Mathf.Infinity; // cooldown timer between attacks
@@ -19,8 +19,10 @@ namespace RPG.Combat
 
         private void Start() // equips a weapon on start
         {
-            Weapon weapon = Resources.Load<Weapon>(defaultWeaponName);
-            EquipWeapon(defaultWeapon);
+            if (currentWeapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
         }
 
         private void Update()
@@ -123,6 +125,18 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("attack"); // reset attack animation
             GetComponent<Animator>().SetTrigger("stopAttack"); // begin rest animation
+        }
+
+        public object CaptureState() // saving your current weapon
+        {
+            return currentWeapon.name; // saving the name of the weapon you have as a string
+        }
+
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state; // calling the weapon name string and making it a state
+            Weapon weapon = Resources.Load<Weapon>(weaponName); // loading your weapon based on the state
+            EquipWeapon(weapon); // equiping your weapon
         }
     } // class Fighter
 } // namespace
