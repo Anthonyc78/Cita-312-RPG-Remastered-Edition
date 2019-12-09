@@ -10,6 +10,7 @@ namespace RPG.Combat
     {
         [SerializeField] float speed = 1; // used for the speed of the projectile
         [SerializeField] bool isHoming = true; // checkbox for if a projectile follows its target
+        [SerializeField] GameObject hitEffect = null; // used for the hit impact effect
         Health target = null; // used the health to identify the target
         float damage = 0; // setting the damage of the weapon
 
@@ -49,6 +50,12 @@ namespace RPG.Combat
             if (other.GetComponent<Health>() != target) return;
             if (target.IsDead()) return; // checks if target is dead before colliding with the box collider of the target
             target.TakeDamage(damage); // applies damage to target
+
+            if (hitEffect != null)
+            {
+                Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            }
+
             Destroy(gameObject); // destroys the projectile after impact
         }
 
